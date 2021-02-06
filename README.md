@@ -12,6 +12,7 @@
 * Separate additions
   * [Vue Loader](https://vue-loader.vuejs.org/) to enable hot reloading (among other things)
   * [Element UI](https://element.eleme.io/#/en-US), our UI components library. This is installed this globally.
+* We recommend using Vetur, which is Vue tooling for VS Code. 
 
 ### To get the project running
 In dev mode
@@ -21,7 +22,7 @@ In dev mode
 For production
 * ```yarn build``` - compiles and minifies for production
 
-### Other terminal scripts
+### Other scripts
 * To run Cypress end-to-end tests: ```yarn test:e2e```
 * Linting: ```yarn lint```
 
