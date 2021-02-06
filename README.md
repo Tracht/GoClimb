@@ -1,15 +1,21 @@
 # hello-world
 
 ### Tech Stack
-* Vue 
-* Vue Router for routing
-* VueX for state management
-* Vue Loader to enable hot reloading (among other things)
-* Element UI, our UI components library. This is installed this globally.
-* Progressive Web App plugin
-* Cypress for end-to-end testing
-* ES Lint (AirBnB style) for linting
-* Babel as our JavaScript compiler
+* [Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) for instant project prototyping. This project was set up using ```vue create hello-world``` and selecting manual configuration options. We selected: Babel, ES Lint, Vue Router, VueX, PWA support, and Cypress for end-to-end testing.  
+* [Babel](https://babeljs.io/) as our JavaScript compiler
+* [ES Lint](https://eslint.org/) (AirBnB style) for linting
+* [Vue Router](https://router.vuejs.org/) for routing
+* [VueX](https://vuex.vuejs.org/) for state management
+* [Progressive Web App](https://cli.vuejs.org/core-plugins/pwa.html) plugin
+* [Cypress](https://www.cypress.io/) for end-to-end testing
+---
+* [Vue Loader](https://vue-loader.vuejs.org/) to enable hot reloading (among other things)
+* [Element UI](https://element.eleme.io/#/en-US), our UI components library. This is installed this globally.
+
+
+
+
+
 
 ### To get the project running
 In dev mode
