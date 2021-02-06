@@ -1,29 +1,27 @@
 # hello-world
 
-## Project setup
-```
-yarn install
-```
+### Tech Stack
+* Vue 
+* Vue Router for routing
+* VueX for state management
+* Vue Loader to enable hot reloading (among other things)
+* Element UI, our UI components library
+* Progressive Web App plugin
+* Cypress for end-to-end testing
+* ES Lint (AirBnB style) for linting
+* Babel as our JavaScript compiler
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### To get the project running
+In dev mode
+* ```yarn install```
+* ``` yarn serve``` - compiles and hot-reloads for development
 
-### Compiles and minifies for production
-```
-yarn build
-```
+For production
+* ```yarn build``` - compiles and minifies for production
 
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
+### Other terminal scripts
+* To run Cypress end-to-end tests: ```yarn test:e2e```
+* Linting: ```yarn lint```
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
