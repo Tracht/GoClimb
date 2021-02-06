@@ -5,7 +5,7 @@
 * Vue Router for routing
 * VueX for state management
 * Vue Loader to enable hot reloading (among other things)
-* Element UI, our UI components library
+* Element UI, our UI components library. This is installed this globally.
 * Progressive Web App plugin
 * Cypress for end-to-end testing
 * ES Lint (AirBnB style) for linting
