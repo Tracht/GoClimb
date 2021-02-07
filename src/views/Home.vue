@@ -1,66 +1,35 @@
 <template>
   <div class="home">
 
-  <div class="form-container">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <el-tabs v-model="activeName" @tab-click="handleClick">
+  <h1>Homepage</h1>
+  <ContainerHeader></ContainerHeader>
 
-      <el-tab-pane label="Register" name="first">
-        <el-row :gutter="40">
-          <el-col :xl="12">
-              <RegisterForm />
-          </el-col>
-        </el-row>
-      </el-tab-pane>
+  <ContainerMain></ContainerMain>
 
-      <el-tab-pane label="Login" name="second">
-        <el-row :gutter="40">
-          <el-col :xl="12">
-            <LoginForm />
-          </el-col>
-        </el-row>
-      </el-tab-pane>
+  <ContainerMain></ContainerMain>
 
-    </el-tabs>
+  <ContainerMain></ContainerMain>
 
-  </div>
+  <ContainerFooter></ContainerFooter>
 
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import LoginForm from '@/components/LoginForm.vue';
-import RegisterForm from '@/components/RegisterForm.vue';
+import ContainerHeader from '@/components/ContainerHeader.vue';
+import ContainerMain from '@/components/ContainerMain.vue';
+import ContainerFooter from '@/components/ContainerFooter.vue';
 
 export default {
   name: 'Home',
   components: {
-    LoginForm,
-    RegisterForm,
-  },
-  data() {
-    return {
-      activeName: 'first',
-    };
-  },
-  methods: {
-    handleClick(tab, event) {
-      console.log(tab, event);
-    },
+    ContainerHeader,
+    ContainerMain,
+    ContainerFooter,
   },
 };
 </script>
 
 <style>
-.form-container {
-    margin-top: 50px;
-    margin-left: 20%;
-    margin-right: 20%;
-    position: relative;
-    /* top: 50%;
-    left: 50%;
-    margin-right: 0%;
-    transform: translate(-50%, -50%) */
-}
 </style>
