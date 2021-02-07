@@ -3,6 +3,7 @@
 
   <ContainerHeader> <Title :title="title"></Title> </ContainerHeader>
   <ContainerMain>
+    <SearchInput></SearchInput>
     <Card :datapoints="datapoints"></Card>
   </ContainerMain>
 
@@ -15,12 +16,14 @@
 // @ is an alias to /src
 import Card from '@/components/Card.vue';
 import Title from '@/components/Title.vue';
+import SearchInput from '@/components/SearchInput.vue';
 
 export default {
   name: 'Dashboard',
   components: {
     Card,
     Title,
+    SearchInput,
   },
   data() {
     return {

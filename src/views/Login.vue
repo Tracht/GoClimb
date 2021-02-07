@@ -8,7 +8,7 @@
       <el-tab-pane label="Register" name="first">
         <el-row>
           <el-col :xs="24">
-              <RegisterForm />
+            <RegisterForm />
           </el-col>
         </el-row>
       </el-tab-pane>
