@@ -4,7 +4,9 @@
   <h1>Dashboard</h1>
   <ContainerHeader></ContainerHeader>
 
-  <ContainerMain></ContainerMain>
+  <ContainerMain>
+    <Card :datapoints="datapoints"></Card>
+  </ContainerMain>
 
   <ContainerFooter></ContainerFooter>
 
@@ -13,11 +15,22 @@
 
 <script>
 // @ is an alias to /src
-// import ContainerHeader from '@/components/ContainerHeader.vue';
+import Card from '@/components/Card.vue';
 
 export default {
   name: 'Dashboard',
-  components: {},
+  components: {
+    Card,
+  },
+  data() {
+    return {
+      datapoints: [
+        { percentage: '10%' },
+        { cost: '£2,000' },
+        { time: '12 months' },
+      ],
+    };
+  },
 };
 </script>
 

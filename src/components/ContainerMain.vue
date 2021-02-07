@@ -1,6 +1,6 @@
 <template>
   <el-container>
-      <el-aside width="200px"></el-aside>
+      <!-- <el-aside width="200px"></el-aside> -->
       <el-container>
           <el-container>
               <el-main></el-main>
@@ -10,12 +10,12 @@
 </template>
 
 <style>
-  .el-aside {
+  /* .el-aside {
     background-color: #D3DCE6;
     color: #333;
     text-align: center;
     line-height: 200px;
-  }
+  } */
 
   .el-main {
     background-color: #E9EEF3;
