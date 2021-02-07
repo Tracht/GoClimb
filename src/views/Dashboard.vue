@@ -1,7 +1,7 @@
 <template>
   <div class="home">
 
- <ContainerHeader> </ContainerHeader>
+  <ContainerHeader> <Title :title="title"></Title> </ContainerHeader>
   <ContainerMain>
     <Card :datapoints="datapoints"></Card>
   </ContainerMain>
@@ -14,19 +14,21 @@
 <script>
 // @ is an alias to /src
 import Card from '@/components/Card.vue';
+import Title from '@/components/Title.vue';
 
 export default {
   name: 'Dashboard',
   components: {
     Card,
+    Title,
   },
   data() {
     return {
-      title: 'Dashboard',
+      title: 'Sydney',
       datapoints: [
-        { percentage: '10%' },
-        { cost: '£2,000' },
-        { time: '12 months' },
+        { title: 'Percentage', value: '10%' },
+        { title: 'Cost', value: '£2,000' },
+        { title: 'Time', value: '4 months' },
       ],
     };
   },
