@@ -1,10 +1,27 @@
 <template>
     <el-container>
         <el-container>
-            <el-header></el-header>
+            <el-header>
+              <Title :title="title"></Title>
+            </el-header>
         </el-container>
     </el-container>
 </template>
+
+<script>
+// @ is an alias to /src
+import Title from '@/components/Title.vue';
+
+export default {
+  name: 'Header',
+  components: {
+    Title,
+  },
+  props: {
+    title: String,
+  },
+};
+</script>
 
 <style>
   .el-header {

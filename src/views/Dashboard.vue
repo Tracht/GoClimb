@@ -1,9 +1,7 @@
 <template>
   <div class="home">
 
-  <h1>Dashboard</h1>
-  <ContainerHeader></ContainerHeader>
-
+ <ContainerHeader> </ContainerHeader>
   <ContainerMain>
     <Card :datapoints="datapoints"></Card>
   </ContainerMain>
@@ -24,6 +22,7 @@ export default {
   },
   data() {
     return {
+      title: 'Dashboard',
       datapoints: [
         { percentage: '10%' },
         { cost: '£2,000' },

@@ -1,10 +1,27 @@
 <template>
     <el-container>
         <el-container>
-            <el-footer></el-footer>
+            <el-footer>
+              <Title :title="title"></Title>
+            </el-footer>
         </el-container>
     </el-container>
 </template>
+
+<script>
+// @ is an alias to /src
+import Title from '@/components/Title.vue';
+
+export default {
+  name: 'Footer',
+  components: {
+    Title,
+  },
+  props: {
+    title: String,
+  },
+};
+</script>
 
 <style>
   .el-footer {

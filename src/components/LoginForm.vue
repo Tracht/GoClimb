@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <div><h2>Login</h2></div> -->
     <el-form :model="ruleForm" status-icon :rules="rules" label-width="120px" ref="loginForm">
       <el-form-item label="Email" prop="email">
         <el-input type="Email" v-model="loginForm.email" autocomplete="off" autofocus>
