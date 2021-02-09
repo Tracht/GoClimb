@@ -1,9 +1,9 @@
 <template>
   <div class="home">
 
-  <ContainerHeader> <Title :title="title"></Title> </ContainerHeader>
+  <ContainerHeader> <Title :title="location"></Title> </ContainerHeader>
   <ContainerMain>
-    <SearchInput></SearchInput>
+    <SearchFilters :searchableList="searchableList"></SearchFilters>
     <Card :datapoints="datapoints"></Card>
   </ContainerMain>
 
@@ -16,18 +16,17 @@
 // @ is an alias to /src
 import Card from '@/components/Card.vue';
 import Title from '@/components/Title.vue';
-import SearchInput from '@/components/SearchInput.vue';
+import SearchFilters from '@/components/SearchFilters.vue';
 
 export default {
   name: 'Dashboard',
   components: {
     Card,
     Title,
-    SearchInput,
+    SearchFilters,
   },
   data() {
     return {
-      title: 'Sydney',
       datapoints: [
         { title: 'Percentage', value: '10%' },
         { title: 'Cost', value: '£2,000' },
@@ -35,6 +34,19 @@ export default {
       ],
     };
   },
+  computed: {
+    location() {
+      return this.$store.state.selectedLocation;
+    },
+    searchableList() {
+      return this.$store.state.searchableLocations;
+    },
+    searchDataResults() {
+      return this.$store.state.searchDataResults;
+    },
+  },
+  methods: {},
+
 };
 </script>
 

@@ -1,13 +1,8 @@
 <template>
   <el-container>
-      <!-- <el-aside width="200px"></el-aside> -->
-      <el-container>
-          <el-container>
-              <el-main>
-                <Title :title="title"></Title>
-              </el-main>
-          </el-container>
-      </el-container>
+      <el-main>
+        <Title :title="title"></Title>
+      </el-main>
     </el-container>
 </template>
 
@@ -27,13 +22,6 @@ export default {
 </script>
 
 <style>
-  /* .el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-    line-height: 200px;
-  } */
-
   .el-main {
     background-color: #E9EEF3;
     color: #333;

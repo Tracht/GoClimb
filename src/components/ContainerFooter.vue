@@ -1,10 +1,8 @@
 <template>
     <el-container>
-        <el-container>
-            <el-footer>
-              <Title :title="title"></Title>
-            </el-footer>
-        </el-container>
+        <el-footer>
+          <Title :title="title"></Title>
+        </el-footer>
     </el-container>
 </template>
 

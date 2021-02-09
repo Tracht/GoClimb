@@ -1,12 +1,10 @@
 <template>
-  <div class="home">
+  <div>
 
   <!-- <Title :title="title"/> -->
   <Title :title="bannerText"></Title>
   <ContainerHeader :title="headerText"></ContainerHeader>
-
   <ContainerMain :title="mainText"></ContainerMain>
-
   <ContainerFooter :title="footerText"></ContainerFooter>
 
   </div>
