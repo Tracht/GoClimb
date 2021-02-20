@@ -1,52 +1,37 @@
 <template>
   <div class="home">
 
-  <ContainerHeader> <Title :title="location"></Title> </ContainerHeader>
-  <ContainerMain>
-    <SearchFilters :searchableList="searchableList"></SearchFilters>
-    <Card :datapoints="datapoints"></Card>
-  </ContainerMain>
-
-  <ContainerFooter></ContainerFooter>
+  <Title :title="selectedLocation"></Title>
+  <Search></Search>
+  <Card :locationData="locationData"></Card>
 
   </div>
 </template>
 
-<script>
-// @ is an alias to /src
+
+<script> // @ is an alias to /src
+import Title from '@/components/Title.vue'; 
+import Search from '@/components/Search.vue';
 import Card from '@/components/Card.vue';
-import Title from '@/components/Title.vue';
-import SearchFilters from '@/components/SearchFilters.vue';
 
 export default {
   name: 'Dashboard',
-  components: {
-    Card,
-    Title,
-    SearchFilters,
+  components: { Card, Title, Search },
+  mounted() {
+   this.$store.dispatch('getLocationData');
   },
   data() {
-    return {
-      datapoints: [
-        { title: 'Percentage', value: '10%' },
-        { title: 'Cost', value: '£2,000' },
-        { title: 'Time', value: '4 months' },
-      ],
-    };
+    return {};
   },
   computed: {
-    location() {
-      return this.$store.state.selectedLocation;
+    selectedLocation() {
+      return this.$store.state.selectedLocation; 
     },
-    searchableList() {
-      return this.$store.state.searchableLocations;
-    },
-    searchDataResults() {
-      return this.$store.state.searchDataResults;
+    locationData() {
+      return this.$store.state.locationData;
     },
   },
   methods: {},
-
 };
 </script>
 

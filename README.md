@@ -4,7 +4,7 @@
 * [Vue CLI](https://cli.vuejs.org/guide/creating-a-project.html#vue-create) for instant project prototyping. 
   * This project was set up using ```vue create hello-world```. We selected manual configuration options, which included:
   * [Babel](https://babeljs.io/) as our JavaScript compiler
-  * [ES Lint](https://eslint.org/) (AirBnB style) for linting
+  * [ES Lint](https://eslint.org/) (AirBnB style) for linting *currently disabled*
   * [Vue Router](https://router.vuejs.org/) for routing
   * [VueX](https://vuex.vuejs.org/) for state management
   * [Progressive Web App](https://cli.vuejs.org/core-plugins/pwa.html) plugin
@@ -24,7 +24,7 @@ For production
 
 ### Other scripts
 * To run Cypress end-to-end tests: ```yarn test:e2e```
-* Linting: ```yarn lint```
+* Linting: ```yarn lint``` *currently disabled*
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

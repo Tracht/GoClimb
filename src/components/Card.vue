@@ -1,8 +1,8 @@
 <template>
     <el-row>
-        <el-col :span="24" :offset="5">
+        <el-col :span="24">
             <div class="card-wrapper">
-                <el-card class="box-card" v-for="(key, value) in datapoints" :key="value">
+                <el-card class="box-card" v-for="(key, value) in locationData" :key="value">
                     <div slot="header" class="card-header">
                         <span>{{key.title}}</span>
                         <!-- <el-button type="text">button</el-button> -->
@@ -21,7 +21,7 @@
 export default {
   name: 'Card',
   props: {
-    datapoints: Array,
+    locationData: Array,
   },
 };
 </script>
@@ -43,6 +43,7 @@ export default {
     display: flex;
     flex-wrap: wrap;
     margin: 10px;
+    justify-content: center;
 }
 
 .el-card {
