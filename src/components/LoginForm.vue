@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form :model="ruleForm" status-icon :rules="rules" label-width="120px" ref="loginForm">
+    <el-form :model="loginForm" status-icon label-width="120px">
       <el-form-item label="Email" prop="email">
         <el-input type="Email" v-model="loginForm.email" autocomplete="off" autofocus>
         </el-input>
@@ -12,7 +12,7 @@
       </el-form-item>
 
       <el-form-item>
-        <el-button type="primary" @click="submitForm('ruleForm')">Login</el-button>
+        <el-button type="primary" @click="submitForm(loginForm)">Login</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -29,16 +29,8 @@ export default {
     };
   },
   methods: {
-    submitForm(formName) {
-      this.$refs[formName].validate((valid) => {
-        if (valid) {
-          console.log('submit!');
-        } else {
-          console.log('error submit!!');
-          return false;
-        }
-        return null;
-      });
+    submitForm(form) {
+      console.log(form);
     },
   },
 };
