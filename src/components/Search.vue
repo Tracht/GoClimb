@@ -20,11 +20,11 @@
 
         <el-row class="search-form-input form-wrapper">
           <el-col :span="24">
-            <el-form-item label="rooms">
-              <el-input v-model="form.rooms"></el-input>
+            <el-form-item label="grade">
+              <el-input v-model="form.grade" placeholder="6a..."></el-input>
             </el-form-item>
-            <el-form-item label="size">
-              <el-input v-model="form.size" placeholder="in square meters"></el-input>
+            <el-form-item label="height">
+              <el-input v-model="form.height" placeholder="in square meters"></el-input>
             </el-form-item>
           </el-col>
         </el-row>
@@ -42,8 +42,8 @@ export default {
       locations: [],
       form: {
         searchInput: '',
-        rooms: '',
-        size: '',
+        grade: '',
+        height: '',
       },
     };
   },

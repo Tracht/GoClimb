@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    selectedLocation: 'Auckland',
+    selectedLocation: 'Krabi, Thailand',
     locationData: [],
     previouslySelectedLocations: [],
     allLocations: [],
@@ -30,12 +30,13 @@ export default new Vuex.Store({
   actions: {
   // these need asyncs in front of the function name
     getLocations({ commit, state }, payload) {
-      const result = [{ "value": "Auckland" }, { "value": "Brooklyn" }, { "value": "Canbarra" }, { "value": "Detroit" }, { "value": "Enfield" }, { "value": "Frankfurt" }, { "value": "Gainsville" }, {"value": "Huddlesfield"}];
+      const result = [{ "value": "Krabi, Thailand" }, { "value": "Chang Mai, Thailand" }, { "value": "Ha Long Bay, Vietnam" }, { "value": "Huu Lung, Vietnam" }, { "value": "Quoc Oai, Vietnam" }, { "value": "Mai Chau, Vietnam" }, { "value": "Paklenica, Croatia" }, {"value": "Istria, Croatia"}, {"value": "Split, Croatia"}];
+      result.sort((a, b) => (a.value > b.value) ? 1 : -1)
       commit('setAllLocations', result);  
     },
 
     getLocationData({ commit, state },  payload){
-      const result = [ { title: 'Percentage', value: '10%' }, { title: 'Cost', value: '£2,000' }, { title: 'Time', value: '4 months' } ]
+      const result = [ { title: 'Number of Routes', value: '70' }, { title: 'Grade 6a-6c', value: '40%' }, { title: 'Grade 7a-7c', value: '60%' }, { title: 'Best time to visit', value: 'November - March' } ]
       commit('setOneLocationData', result);
     },
 
