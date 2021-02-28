@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form-container">
     <el-form :model="reigsterForm" status-icon :rules="rules" label-width="120px" ref="reigsterForm">
       <el-form-item label="Email" prop="email">
         <el-input type="Email" v-model="reigsterForm.email" autocomplete="off" autofocus>
@@ -79,4 +79,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
+.form-container {
+    margin-top: 100px;
+    margin-left: 25%;
+    margin-right: 25%;
+    position: relative;
+}
 </style>
