@@ -83,4 +83,8 @@ export default {
     justify-content: center;
 }
 
+.inline-input{
+    width: 300px;
+}
+
 </style>
