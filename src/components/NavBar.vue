@@ -1,7 +1,7 @@
 <template>
 <header class="nav-container"> 
     <!-- <h1 class="logo-text">Logo</h1> -->
-    <img class="logo__img" src="../assets/sun-and-mountain-2.png" alt="Company logo - mountains">
+    <img class="logo__img" src="../assets/orange-mountain.png" alt="Company logo - mountains">
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
     <nav class="nav">
@@ -24,7 +24,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -38,7 +38,6 @@ export default {
   z-index: 1001;
   width: 100%;
 }
-
 .nav {
   position: absolute;
   text-align: left;
@@ -50,30 +49,26 @@ export default {
   width: 100%;
   transform: scale(1, 0);
 }
-
 .logo-text {
   color:  #42b983;
 }
-
 .logo__img {
   grid-column-start: 2;
   grid-column-end: 3;
   z-index: 998;
-  width: 100px;
-  height: auto;
+  width: auto;
+  height: 100px;
+  padding: 10px;
 }
-
 .nav ul {
   margin: 0;
-  padding: 0;
+  padding: 30px;
   list-style: none;
 }
-
 .nav li {
   margin-bottom: 1em; 
   margin-left: 1em;
 }
-
 .nav a {
   color: white; 
   text-decoration: none;
@@ -82,37 +77,32 @@ export default {
   opacity: 0;
   transition: opacity 150ms ease-in-out; /* the last 250 is the delay before starting the animation */
 }
-
 .nav a.router-link {
   color: white; 
   text-decoration: none;
   font-size: 1.2rem;
   text-transform: uppercase;
 }
-
 .nav a:hover {
   color:  #42b983;
 }
-
 .nav a.router-link-exact-active {
   color:  #42b983;
 }
 
+/* Navigation Bar at minimum tablet size */
 @media screen and (min-width: 769px) {
     .nav-toggle-label {
         display: none;
     }
-
     .nav-container {
         display: grid;
         grid-template-columns: 1fr 4fr; /* */
         /* grid-template-columns: 1fr auto minmax(800px, 1fr) 1fr; */
     }
-
     .logo {
         grid-column: 1 / 2;
     }
-
     .nav {
         all: unset; /* wont work for IE or Edge */
         grid-column: 3 / 5;
@@ -120,16 +110,13 @@ export default {
         justify-content: flex-end;
         align-items: center; 
     }
-
     .nav a {
         text-transform: none;
         opacity: 1;
     }
-
     .nav ul {
       display: flex;
     }
-
     .nav li {
         margin-left: 3em; 
         margin-bottom: 0;
@@ -140,7 +127,6 @@ export default {
 .nav-toggle {
         display: none;
 }
-
 @media screen and (max-width: 768px)  {
     .nav-toggle-label {
         color: #42b983;
@@ -152,18 +138,15 @@ export default {
         display: flex;
         align-items: center;
     }
-
     .nav-toggle:checked ~ nav {
         transform: scale(1,1);
         transform-origin: top;
         transition: transform 400ms ease-in-out;
     }
-
     .nav-toggle:checked ~ nav a {
         opacity: 1;
         transition: opacity 250ms ease-in-out 250ms; /* the last 250 is the delay before starting the animation */
     }
-
     .nav-toggle-label span,
     .nav-toggle-label span::before,
     .nav-toggle-label span::after {
@@ -175,21 +158,17 @@ export default {
         border-radius: 2px;
         position: relative;  
     }
-
     .nav-toggle-label span::before,
     .nav-toggle-label span::after { 
     content: '';
     position: absolute;
     }
-
     .nav-toggle-label span::before{
         bottom: 7px;
     }
-
     .nav-toggle-label span::after{
         top: 7px;
     } 
 }
-
 
 </style>
