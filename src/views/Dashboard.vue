@@ -9,7 +9,7 @@
 
 <script> // @ is an alias to /src
 import Title from '@/components/Title.vue'; 
-import Search from '@/components/Search.vue';
+import Search from '@/components/Forms/Search.vue';
 import Card from '@/components/Card.vue';
 
 
