@@ -8,7 +8,7 @@
         <ul>
             <li> <router-link to="/">Home</router-link></li>
             <li> <router-link to="/Products">Products</router-link></li>
-            <li> <router-link to="/Login">Sign Up</router-link> </li>
+            <li> <router-link to="/Login">Login</router-link> </li>
             <li> <router-link to="/Dashboard">Dashboard</router-link> </li>
         </ul>
     </nav>
@@ -40,29 +40,28 @@ export default {
   z-index: 1001;
   width: 100%;
 }
-.nav {
-  position: absolute;
-  text-align: left;
-  grid-column: 6/12;
-  top: 100%;
-  left: 0;
-  background: #2c3e50;
-  width: 100%;
-  transform: scale(1, 0);
-}
 .nav-wrapper img {
-  grid-column: 1/2;
-  z-index: 998;
+  grid-column: 1;
   width: auto;
   height: 100px;
   padding: 10px;
 }
 .nav-wrapper h1 {
-  grid-column: 3/4;
+  grid-column: 2;
   color:  #42b983;
   margin: 0;
   padding: 30px;
   align-items: center; 
+}
+.nav {
+  position: absolute;
+  text-align: left;
+  align-items: center; 
+  top: 100%;
+  left: 0;
+  background: #2c3e50;
+  width: 100%;
+  transform: scale(1, 0);
 }
 .nav ul {
   display: flex;
@@ -103,13 +102,9 @@ export default {
     .nav-toggle-label {
         display: none;
     }
-    .nav-wrapper {
-        display: grid;
-        grid-template-columns: 12fr;
-    }
     .nav {
         all: unset; 
-        grid-column: 6/12;
+        grid-column: 12;
         display: flex;
         justify-content: flex-end;
         align-items: center; 
@@ -117,9 +112,6 @@ export default {
     .nav a {
         text-transform: none;
         opacity: 1;
-    }
-    .nav ul {
-      display: flex;
     }
 }
 
@@ -142,7 +134,6 @@ export default {
     .nav ul {
       display: block;
       margin: 0;
-      padding: 2em 2em 2em 2em;
       list-style: none;
     }
     .nav li {
