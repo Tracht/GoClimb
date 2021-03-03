@@ -54,14 +54,10 @@ export default {
   align-items: center; 
 }
 .nav {
-  position: absolute;
-  text-align: left;
+  all: unset; 
+  grid-column: 12;
+  display: flex;
   align-items: center; 
-  top: 100%;
-  left: 0;
-  background: #2c3e50;
-  width: 100%;
-  transform: scale(1, 0);
 }
 .nav ul {
   display: flex;
@@ -74,12 +70,12 @@ export default {
   margin-bottom: 0;
 }
 .nav a {
+  text-transform: none;
+  opacity: 1;
   color: white; 
   text-decoration: none;
   font-size: 1.2rem;
   text-transform: uppercase;
-  opacity: 0;
-  transition: opacity 150ms ease-in-out; /* the last 250 is the delay before starting the animation */
 }
 .nav a.router-link {
   color: white; 
@@ -93,93 +89,97 @@ export default {
 .nav a.router-link-exact-active {
   color:  #42b983;
 }
+.nav-toggle-label {
+  display: none;
+}
 .nav-toggle {
   display: none;
 }
 
-/* Navigation Bar at minimum tablet size */
-@media screen and (min-width: 769px) {
-    .nav-toggle-label {
-        display: none;
-    }
-    .nav {
-        all: unset; 
-        grid-column: 12;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center; 
-    }
-    .nav a {
-        text-transform: none;
-        opacity: 1;
-    }
-}
-
 /* Collapsing Nav Bar at TABLET size */
 @media screen and (max-width: 768px)  {
-    /* Navigation Bar */
-    .nav {
-      grid-column: 1/13;
-    }
-    .nav-wrapper img {
-      grid-column: 8;
-    }
-    .nav-wrapper h1 {
-      grid-column: 12;
-      color:  #42b983;
-      margin: 0;
-      padding: 30px;
-      align-items: center; 
-    }
-    .nav ul {
-      display: block;
-      margin: 0;
-      list-style: none;
-    }
-    .nav li {
-      margin-left: 0;
-      margin-bottom: 1em;
-    }
-    /* Burger Icon */
-    .nav-toggle-label { 
-        color: #42b983;
-        position: absolute;
-        margin-left: 2em;
-        height: 100px;
-        display: flex;
-        align-items: center;
-    }
-    .nav-toggle:checked ~ nav {
-        transform: scale(1,1);
-        transform-origin: top;
-        transition: transform 400ms ease-in-out;
-    }
-    .nav-toggle:checked ~ nav a {
-        opacity: 1;
-        transition: opacity 250ms ease-in-out 250ms; /* the last 250 is the delay before starting the animation */
-    }
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        text-align: left;
-        width: block;
-        background: white;
-        height: 2px;
-        width: 2em;
-        border-radius: 2px;
-        position: relative;  
-    }
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after { 
-      content: '';
+
+  /* Navigation Bar */
+  .nav {
+    grid-column: 1/13;
+    position: absolute;
+    text-align: left;
+    display: flex-start;
+    align-items: center; 
+    top: 100%;
+    left: 0;
+    background: #2c3e50;
+    width: 100%;
+    transform: scale(1, 0);
+  }
+  .nav-wrapper img {
+    grid-column: 8;
+  }
+  .nav-wrapper h1 {
+    grid-column: 12;
+    color:  #42b983;
+    margin: 0;
+    padding: 30px;
+    align-items: center; 
+  }
+  .nav ul {
+    display: block;
+    margin: 0;
+    list-style: none;
+  }
+  .nav li {
+    margin-left: 0;
+    margin-bottom: 1em;
+  }
+  .nav a {
+    color: white; 
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out; /* the last 250 is the delay before starting the animation */
+  }
+
+  /* Burger Icon */
+  .nav-toggle-label { 
+      color: #42b983;
       position: absolute;
-    }
-    .nav-toggle-label span::before{
-        bottom: 7px;
-    }
-    .nav-toggle-label span::after{
-        top: 7px;
-    } 
+      margin-left: 2em;
+      height: 100px;
+      display: flex;
+      align-items: center;
+  }
+  .nav-toggle:checked ~ nav {
+      transform: scale(1,1);
+      transform-origin: top;
+      transition: transform 400ms ease-in-out;
+  }
+  .nav-toggle:checked ~ nav a {
+      opacity: 1;
+      transition: opacity 250ms ease-in-out 250ms; /* the last 250 is the delay before starting the animation */
+  }
+  .nav-toggle-label span,
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after {
+      text-align: left;
+      width: block;
+      background: white;
+      height: 2px;
+      width: 2em;
+      border-radius: 2px;
+      position: relative;  
+  }
+  .nav-toggle-label span::before,
+  .nav-toggle-label span::after { 
+    content: '';
+    position: absolute;
+  }
+  .nav-toggle-label span::before{
+      bottom: 7px;
+  }
+  .nav-toggle-label span::after{
+      top: 7px;
+  } 
 }
 
 </style>
