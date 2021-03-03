@@ -1,10 +1,8 @@
 <template>
-  <div class="home">
-
+  <div class="container">
   <Title :title="selectedLocation"></Title>
   <Search></Search>
   <Card :locationData="locationData"></Card>
-
   </div>
 </template>
 
@@ -13,6 +11,7 @@
 import Title from '@/components/Title.vue'; 
 import Search from '@/components/Search.vue';
 import Card from '@/components/Card.vue';
+
 
 export default {
   name: 'Dashboard',
@@ -36,4 +35,7 @@ export default {
 </script>
 
 <style>
+.container {
+  padding-top: 100px;
+}
 </style>
