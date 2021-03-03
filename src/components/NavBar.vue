@@ -39,6 +39,7 @@ export default {
   position: fixed; 
   z-index: 1001;
   width: 100%;
+  align-items: center;
 }
 .nav-wrapper img {
   grid-column: 1;
@@ -49,50 +50,29 @@ export default {
 .nav-wrapper h1 {
   grid-column: 2;
   color:  #42b983;
-  margin: 0;
   padding: 30px;
-  align-items: center; 
 }
 .nav {
-  all: unset; 
   grid-column: 12;
-  display: flex;
-  align-items: center; 
+  padding: 30px;
 }
 .nav ul {
   display: flex;
-  margin: 0;
-  padding: 30px;
   list-style: none;
 }
 .nav li {
-  margin-left: 3em; 
-  margin-bottom: 0;
+  margin-left: 3em;
 }
-.nav a {
-  text-transform: none;
-  opacity: 1;
+.nav a, a.router-link {
   color: white; 
+  text-transform: uppercase;
   text-decoration: none;
   font-size: 1.2rem;
-  text-transform: uppercase;
 }
-.nav a.router-link {
-  color: white; 
-  text-decoration: none;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-}
-.nav a:hover {
+.nav a:hover, a.router-link-exact-active {
   color:  #42b983;
 }
-.nav a.router-link-exact-active {
-  color:  #42b983;
-}
-.nav-toggle-label {
-  display: none;
-}
-.nav-toggle {
+.nav-toggle, .nav-toggle-label {
   display: none;
 }
 
@@ -105,12 +85,11 @@ export default {
     position: absolute;
     text-align: left;
     display: flex-start;
-    align-items: center; 
     top: 100%;
-    left: 0;
     background: #2c3e50;
     width: 100%;
     transform: scale(1, 0);
+    padding: 0;
   }
   .nav-wrapper img {
     grid-column: 8;
@@ -118,24 +97,19 @@ export default {
   .nav-wrapper h1 {
     grid-column: 12;
     color:  #42b983;
-    margin: 0;
-    padding: 30px;
-    align-items: center; 
   }
   .nav ul {
     display: block;
-    margin: 0;
     list-style: none;
   }
   .nav li {
     margin-left: 0;
     margin-bottom: 1em;
   }
+  .nav li:last-child{
+    padding-bottom: 20px;
+  }
   .nav a {
-    color: white; 
-    text-decoration: none;
-    font-size: 1.2rem;
-    text-transform: uppercase;
     opacity: 0;
     transition: opacity 150ms ease-in-out; /* the last 250 is the delay before starting the animation */
   }
@@ -144,7 +118,7 @@ export default {
   .nav-toggle-label { 
       color: #42b983;
       position: absolute;
-      margin-left: 2em;
+      margin-left: 40px;
       height: 100px;
       display: flex;
       align-items: center;
