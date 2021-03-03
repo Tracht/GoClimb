@@ -1,6 +1,7 @@
 <template>
-  <header class="nav-container"> 
-    <img src="../assets/orange-mountain.png" alt="Company logo - mountains">
+<header class="nav-container"> 
+    <!-- <h1 class="logo-text">Logo</h1> -->
+    <img class="logo__img" src="../assets/orange-mountain.png" alt="Company logo - mountains">
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
     <nav class="nav">
@@ -30,12 +31,10 @@ export default {
 }
 
 /* Navigation */
-.nav-container{
+.nav-container {
   background:  #2c3e50;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 100px;
-  position: fixed; 
+  text-align: center;
+  position: fixed;
   z-index: 1001;
   width: 100%;
 }
@@ -50,7 +49,10 @@ export default {
   width: 100%;
   transform: scale(1, 0);
 }
-.nav-container img {
+.logo-text {
+  color:  #42b983;
+}
+.logo__img {
   grid-column-start: 2;
   grid-column-end: 3;
   z-index: 998;
@@ -95,7 +97,8 @@ export default {
     }
     .nav-container {
         display: grid;
-        grid-template-columns: 1fr 4fr;
+        grid-template-columns: 1fr 4fr; /* */
+        /* grid-template-columns: 1fr auto minmax(800px, 1fr) 1fr; */
     }
     .logo {
         grid-column: 1 / 2;
@@ -125,15 +128,6 @@ export default {
         display: none;
 }
 @media screen and (max-width: 768px)  {
-
-    .nav {
-      grid-column-start: 1;
-      grid-column-end: 13;
-    }
-    .nav-container img {
-      grid-column-start: 6;
-      grid-column-end: 7;
-    }
     .nav-toggle-label {
         color: #42b983;
         position: absolute;
