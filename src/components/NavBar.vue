@@ -1,6 +1,7 @@
 <template>
-  <header class="nav-container"> 
+  <header class="nav-wrapper"> 
     <img src="../assets/orange-mountain.png" alt="Company logo - mountains">
+    <h1>GoClimb</h1>
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
     <nav class="nav">
@@ -30,7 +31,7 @@ export default {
 }
 
 /* Navigation */
-.nav-container{
+.nav-wrapper{
   background:  #2c3e50;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -42,30 +43,36 @@ export default {
 .nav {
   position: absolute;
   text-align: left;
-  grid-column-start: 3;
-  grid-column-end: 4;
+  grid-column: 6/12;
   top: 100%;
   left: 0;
   background: #2c3e50;
   width: 100%;
   transform: scale(1, 0);
 }
-.nav-container img {
-  grid-column-start: 2;
-  grid-column-end: 3;
+.nav-wrapper img {
+  grid-column: 1/2;
   z-index: 998;
   width: auto;
   height: 100px;
   padding: 10px;
 }
+.nav-wrapper h1 {
+  grid-column: 3/4;
+  color:  #42b983;
+  margin: 0;
+  padding: 30px;
+  align-items: center; 
+}
 .nav ul {
+  display: flex;
   margin: 0;
   padding: 30px;
   list-style: none;
 }
 .nav li {
-  margin-bottom: 1em; 
-  margin-left: 1em;
+  margin-left: 3em; 
+  margin-bottom: 0;
 }
 .nav a {
   color: white; 
@@ -87,22 +94,22 @@ export default {
 .nav a.router-link-exact-active {
   color:  #42b983;
 }
+.nav-toggle {
+  display: none;
+}
 
 /* Navigation Bar at minimum tablet size */
 @media screen and (min-width: 769px) {
     .nav-toggle-label {
         display: none;
     }
-    .nav-container {
+    .nav-wrapper {
         display: grid;
-        grid-template-columns: 1fr 4fr;
-    }
-    .logo {
-        grid-column: 1 / 2;
+        grid-template-columns: 12fr;
     }
     .nav {
-        all: unset; /* wont work for IE or Edge */
-        grid-column: 3 / 5;
+        all: unset; 
+        grid-column: 6/12;
         display: flex;
         justify-content: flex-end;
         align-items: center; 
@@ -114,32 +121,39 @@ export default {
     .nav ul {
       display: flex;
     }
-    .nav li {
-        margin-left: 3em; 
-        margin-bottom: 0;
-    }
 }
 
-/* Hamburger Icon */
-.nav-toggle {
-        display: none;
-}
+/* Collapsing Nav Bar at TABLET size */
 @media screen and (max-width: 768px)  {
-
+    /* Navigation Bar */
     .nav {
-      grid-column-start: 1;
-      grid-column-end: 13;
+      grid-column: 1/13;
     }
-    .nav-container img {
-      grid-column-start: 6;
-      grid-column-end: 7;
+    .nav-wrapper img {
+      grid-column: 8;
     }
-    .nav-toggle-label {
+    .nav-wrapper h1 {
+      grid-column: 12;
+      color:  #42b983;
+      margin: 0;
+      padding: 30px;
+      align-items: center; 
+    }
+    .nav ul {
+      display: block;
+      margin: 0;
+      padding: 2em 2em 2em 2em;
+      list-style: none;
+    }
+    .nav li {
+      margin-left: 0;
+      margin-bottom: 1em;
+    }
+    /* Burger Icon */
+    .nav-toggle-label { 
         color: #42b983;
         position: absolute;
-        top: 0;
-        left: 0;
-        margin-left: 1em;
+        margin-left: 2em;
         height: 100px;
         display: flex;
         align-items: center;
@@ -166,8 +180,8 @@ export default {
     }
     .nav-toggle-label span::before,
     .nav-toggle-label span::after { 
-    content: '';
-    position: absolute;
+      content: '';
+      position: absolute;
     }
     .nav-toggle-label span::before{
         bottom: 7px;
