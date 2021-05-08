@@ -1,12 +1,19 @@
 .DS_Store
 node_modules
 /dist
+package-lock.json
+yarn-lock.json
 
 /tests/e2e/videos/
 /tests/e2e/screenshots/
 
 
+
+# docker
+docker-compose-keycloak.yml
+
 # local env files
+.env
 .env.local
 .env.*.local
 
